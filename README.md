@@ -1,5 +1,7 @@
 # Docker image for Raspberry Pi
 
+[Docker Hub](https://hub.docker.com/r/imelnik/rpi-python3-tensorflow-opencv/)
+
 - python 3.4
 - numpy
 - keras
@@ -8,7 +10,7 @@
 
 # Credits
 
-[https://hub.docker.com/r/sdhibit/rpi-raspbian/](https://hub.docker.com/r/sdhibit/rpi-raspbian/)
+[https://hub.docker.com/r/resin/rpi-raspbian/](https://hub.docker.com/r/resin/rpi-raspbian/)
 
 [https://github.com/samjabrahams/tensorflow-on-raspberry-pi](https://github.com/samjabrahams/tensorflow-on-raspberry-pi)
 

@@ -13,3 +13,7 @@
 [https://github.com/samjabrahams/tensorflow-on-raspberry-pi](https://github.com/samjabrahams/tensorflow-on-raspberry-pi)
 
 [http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/](http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
+
+# Github repo
+
+[rpi-python3-tensorflow-opencv](https://github.com/iMelnik/rpi-python3-tensorflow-opencv)

@@ -8,7 +8,7 @@ RUN apt-get update && \
       libpng12-dev libavcodec-dev libavformat-dev libswscale-dev \
       libv4l-dev libxvidcore-dev libx264-dev python3-yaml \
       python3-scipy python3-h5py && \
-      apt-get clean && rm -rf /var/lib/apt/lists/*
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Keras Tensorflow
 ADD https://github.com/samjabrahams/tensorflow-on-raspberry-pi/releases/download/v1.0.0/tensorflow-1.0.0-cp34-cp34m-linux_armv7l.whl /tensorflow-1.0.0-cp34-cp34m-linux_armv7l.whl

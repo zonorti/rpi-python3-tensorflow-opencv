@@ -1,4 +1,4 @@
-FROM sdhibit/rpi-raspbian
+FROM resin/rpi-raspbian:jessie
 MAINTAINER Sergey Melnik <admin.sa@gmail.com>
 
 RUN apt-get update && \

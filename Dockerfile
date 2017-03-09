@@ -1,4 +1,5 @@
-FROM resin/rpi-raspbian:jessie
+FROM armhf/debian
+
 MAINTAINER Sergey Melnik <admin.sa@gmail.com>
 
 RUN apt-get update && \
@@ -11,8 +12,9 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Keras Tensorflow
+RUN pip3 install keras
 ADD https://github.com/samjabrahams/tensorflow-on-raspberry-pi/releases/download/v1.0.0/tensorflow-1.0.0-cp34-cp34m-linux_armv7l.whl /tensorflow-1.0.0-cp34-cp34m-linux_armv7l.whl
-RUN pip3 install keras && pip3 install /tensorflow-1.0.0-cp34-cp34m-linux_armv7l.whl && rm /tensorflow-1.0.0-cp34-cp34m-linux_armv7l.whl
+RUN pip3 install /tensorflow-1.0.0-cp34-cp34m-linux_armv7l.whl && rm /tensorflow-1.0.0-cp34-cp34m-linux_armv7l.whl
 
 # OpenCV
 ENV OPENCV_VERSION="3.2.0"
@@ -23,7 +25,8 @@ ADD https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.tar.gz ${OPENCV_D
 RUN cd ${OPENCV_DIR} && \
     tar -xzf ${OPENCV_VERSION}.tar.gz && \
     rm ${OPENCV_VERSION}.tar.gz && \
-    cd ${OPENCV_DIR}/opencv-${OPENCV_VERSION}/build && \
+    mkdir ${OPENCV_DIR}opencv-${OPENCV_VERSION}/build && \
+    cd ${OPENCV_DIR}opencv-${OPENCV_VERSION}/build && \
     cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .. && make -j4 && make install && \
     mv /usr/local/lib/python3.4/dist-packages/cv2.cpython-34m.so /usr/local/lib/python3.4/dist-packages/cv2.so && \
     rm -rf ${OPENCV_DIR}

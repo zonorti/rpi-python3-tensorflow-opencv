@@ -1,4 +1,6 @@
-FROM armhf/debian
+FROM resin/armv7hf-debian-qemu
+
+RUN [ "cross-build-start" ]
 
 MAINTAINER Sergey Melnik <admin.sa@gmail.com>
 
@@ -30,3 +32,5 @@ RUN cd ${OPENCV_DIR} && \
     cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .. && make -j4 && make install && \
     mv /usr/local/lib/python3.4/dist-packages/cv2.cpython-34m.so /usr/local/lib/python3.4/dist-packages/cv2.so && \
     rm -rf ${OPENCV_DIR}
+
+RUN [ "cross-build-end" ] 
